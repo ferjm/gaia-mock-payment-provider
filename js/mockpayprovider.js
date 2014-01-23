@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 
   // service ID.
-  document.getElementById('serviceId').value = mozPaymentProvider.serviceId;
+  document.getElementById('serviceId').value = mozPaymentProvider.paymentServiceId;
 
   // iccInfo.
   var iccInfo = mozPaymentProvider.iccInfo;
