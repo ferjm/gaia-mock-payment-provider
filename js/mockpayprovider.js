@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', function() {
-
-  if (!mozPaymentProvider) {
+  var warning = document.getElementById('warning');
+  if (typeof mozPaymentProvider === 'undefined') {
+    warning.innerHTML = 'This payment flow is supposed to be opened within a mozPay call';
+    warning.classList.remove('hide');
     return;
   }
 
@@ -19,6 +21,8 @@ window.addEventListener('DOMContentLoaded', function() {
   var iccInfo = mozPaymentProvider.iccInfo;
   console.log("iccInfo " + JSON.stringify(iccInfo));
   if (!iccInfo) {
+    warning.innerHTML = 'ICC related functionality only works in a real device with a SIM';
+    warning.classList.remove('hide');
     return;
   }
   var iccId = [];
