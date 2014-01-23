@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function() {
     mcc.push(iccInfo[serviceId].mcc);
     mnc.push(iccInfo[serviceId].mnc);
   });
-  document.getElementById('iccid').value = iccId.join(", ");
+  document.getElementById('iccId').value = iccId.join(", ");
   document.getElementById('mcc').value = mcc.join(", ");
   document.getElementById('mnc').value = mnc.join(", ");
 });
