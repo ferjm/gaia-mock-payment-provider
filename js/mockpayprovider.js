@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
     mozPaymentProvider.paymentSuccess();
   });
   document.getElementById('btError').addEventListener('click', function() {
-    mozPaymentProvider.paymentError();
+    mozPaymentProvider.paymentFailed('NO REASON');
   });
 
   // service ID.
