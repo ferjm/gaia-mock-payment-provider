@@ -17,13 +17,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // iccInfo.
   var iccInfo = mozPaymentProvider.iccInfo;
+  console.log("iccInfo " + JSON.stringify(iccInfo));
   if (!iccInfo) {
     return;
   }
   var iccId = [];
   var mcc = [];
   var mnc = [];
-  iccInfo.forEach(serviceId => {
+  Object.keys(iccInfo).forEach(serviceId => {
     iccId.push(iccInfo[serviceId].iccId);
     mcc.push(iccInfo[serviceId].mcc);
     mnc.push(iccInfo[serviceId].mnc);
