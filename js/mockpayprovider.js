@@ -1,4 +1,9 @@
 window.addEventListener('DOMContentLoaded', function() {
+
+  if (!mozPaymentProvider) {
+    return;
+  }
+
   // Button click handlers.
   document.getElementById('btSuccess').addEventListener('click', function() {
     mozPaymentProvider.paymentSuccess();
