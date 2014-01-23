@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+# Time: Thu Jan 23 2014 17:43:54 GMT+0000 (UTC)
+
+CACHE:
+http://ferjm.github.io/gaia-mock-payment-provider/
+http://ferjm.github.io/gaia-mock-payment-provider/style/mockpayprovider.css
+http://ferjm.github.io/gaia-mock-payment-provider/js/mockpayprovider.js
+
+NETWORK:
+*
