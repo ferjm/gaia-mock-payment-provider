@@ -19,7 +19,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // iccInfo.
   var iccInfo = mozPaymentProvider.iccInfo;
-  console.log("iccInfo " + JSON.stringify(iccInfo));
   if (!iccInfo) {
     warning.innerHTML = 'ICC related functionality only works in a real device with a SIM';
     warning.classList.remove('hide');
@@ -29,12 +28,10 @@ window.addEventListener('DOMContentLoaded', function() {
   var mcc = [];
   var mnc = [];
   Object.keys(iccInfo).forEach(serviceId => {
-    console.log("iccInfo " + JSON.stringify(iccInfo[serviceId]));
     iccId.push(iccInfo[serviceId].iccId);
     mcc.push(iccInfo[serviceId].mcc);
     mnc.push(iccInfo[serviceId].mnc);
   });
-  console.log("ICCs " + JSON.stringify(iccId.join(", ")));
   document.getElementById('iccId').value = iccId.join(", ");
   document.getElementById('mcc').value = mcc.join(", ");
   document.getElementById('mnc').value = mnc.join(", ");
