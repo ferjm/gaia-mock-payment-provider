@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // Button click handlers.
   document.getElementById('btSuccess').addEventListener('click', function() {
     console.log("Success clicked");
-    mozPaymentProvider.paymentSuccess();
+    mozPaymentProvider.paymentSuccess("Result");
   });
   document.getElementById('btError').addEventListener('click', function() {
     console.log("Error clicked");
