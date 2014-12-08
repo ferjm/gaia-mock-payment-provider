@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
+  var mozPaymentProvider = window.mozPaymentProvider || navigator.mozPaymentProvider;
   var warning = document.getElementById('warning');
   if (typeof mozPaymentProvider === 'undefined') {
     warning.innerHTML = 'This payment flow is supposed to be opened within a mozPay call';
