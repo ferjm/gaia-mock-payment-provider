@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
-  var mozPaymentProvider = window.mozPaymentProvider || navigator.mozPaymentProvider;
+  var mozPaymentProvider = window.navigator.mozPaymentProvider ||
+                           window.mozPaymentProvider;
+  console.log("mozPaymentProvider ", mozPaymentProvider);
   var warning = document.getElementById('warning');
   if (typeof mozPaymentProvider === 'undefined') {
     warning.innerHTML = 'This payment flow is supposed to be opened within a mozPay call';
@@ -9,9 +11,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // Button click handlers.
   document.getElementById('btSuccess').addEventListener('click', function() {
+    console.log("Success clicked");
     mozPaymentProvider.paymentSuccess();
   });
   document.getElementById('btError').addEventListener('click', function() {
+    console.log("Error clicked");
     mozPaymentProvider.paymentFailed('NO REASON');
   });
 
