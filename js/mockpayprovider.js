@@ -61,10 +61,12 @@ window.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btSend').addEventListener('click', function() {
     var req = mozPaymentProvider.sendSilentSms(smsAddress.value, smsBody.value);
     req.onsuccess = function() {
+      console.log('Silent SMS sent');
       info.classList.remove('hide');
       info.textContent = 'SMS sent';
     };
     req.onerror = function() {
+      console.log('Error sending silent SMS');
       error.classList.remove('hide');
       error.textContent = 'Error sending SMS: ' + req.error.name;
     };
