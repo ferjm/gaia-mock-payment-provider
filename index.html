@@ -9,18 +9,40 @@
 <body>
   <div class="main-form">
     <div id="warning" class="warning hide"></div>
-    <label>ICC ID</label>
-    <input id="iccId" type="text" placeholder="ICC ID" value="ICC ID">
-    <label>MCC</label>
-    <input id="mcc" type="text" placeholder="MCC" value="MCC">
-    <label>MNC</label>
-    <input id="mnc" type="text" placeholder="MNC" value="MNC">
-    <label>Payment service ID</label>
-    <input id="serviceId" type="text" placeholder="Service ID" value="Service ID">
-    <div>
-      <button id="btSuccess">Payment Success</button>
-      <button id="btError">Payment Failed</button>
-    </div>
+    <div id="info" class="info hide"></div>
+    <div id="error" class="error hide"></div>
+    <section id="main-section">
+      <label>ICC ID</label>
+      <input id="iccId" type="text" placeholder="ICC ID" value="ICC ID">
+      <label>MCC</label>
+      <input id="mcc" type="text" placeholder="MCC" value="MCC">
+      <label>MNC</label>
+      <input id="mnc" type="text" placeholder="MNC" value="MNC">
+      <label>Payment service ID</label>
+      <input id="serviceId" type="text" placeholder="Service ID" value="Service ID"> 
+      <div>
+        <button id="btSuccess">Payment Success</button>
+        <button id="btError">Payment Failed</button>
+        <hr/>
+        <button id="btSms">Silent SMS screen</button>
+      </div>
+    </section>
+    <section id="sms-section" class="hide">
+      <label>Add silent number</label>
+      <input id="silent-number" type="text" placeholder="Silent number" value="">
+      <div id="silent-numbers-container" class="hide">
+        Observing messages from:
+        <ul id="silent-numbers-list">
+        </ul>
+      </div>
+      <button id="btAddSilentNumber">Add silent number</button>
+      <hr/>
+      <input id="sms-address" type="text" placeholder="Sms address" value="">
+      <input id="sms-body" type="text" placeholder="Sms body" value="">
+      <button id="btSend">Send silent SMS</button>
+      <hr/>
+      <button id="btMain">Back to main</button>
+    </section>
   </div>
 </body>
 </html>

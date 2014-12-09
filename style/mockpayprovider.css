@@ -58,6 +58,29 @@ button {
   background-color: #FEEFB3;
 }
 
+.info {
+  margin: 10px 0px;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #0E0D14;
+  background-color: #AACDE3;
+}
+
+.error {
+  margin: 10px 0px;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #571020;
+  background-color: #E3BAC3;
+}
+
 .hide {
   display: none;
+}
+
+hr {
+  margin: 1rem;
+  background-color:gray;
 }
