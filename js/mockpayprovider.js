@@ -51,11 +51,11 @@ window.addEventListener('DOMContentLoaded', function() {
     item.textContent = number;
     silentNumbersList.appendChild(item);
     silentNumbersContainer.classList.remove('hide');
-    mozPaymentProvider.observeSilentSms(number, function(evt) {
-      console.log('Received silent SMS ' + evt.target.body);
+    mozPaymentProvider.observeSilentSms(number, function(message) {
+      console.log('Received silent SMS ' + JSON.stringify(message));
       info.classList.remove('hide');
-      info.textContent = 'Silent SMS received from ' + number + ': ' +
-                          evt.target.body;
+      info.textContent = 'Silent SMS received from ' + message.number + ': ' +
+                          message.body;
     });
   });
   document.getElementById('btSend').addEventListener('click', function() {
