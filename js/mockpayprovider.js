@@ -73,24 +73,28 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 
   // service ID.
-  document.getElementById('serviceId').value = mozPaymentProvider.paymentServiceId;
+  try {
+    document.getElementById('serviceId').value = mozPaymentProvider.paymentServiceId;
+  } catch(e) {}
 
   // iccInfo.
-  var iccInfo = mozPaymentProvider.iccInfo;
-  if (!iccInfo) {
-    warning.innerHTML = 'ICC related functionality only works in a real device with a SIM';
-    warning.classList.remove('hide');
-    return;
-  }
-  var iccId = [];
-  var mcc = [];
-  var mnc = [];
-  Object.keys(iccInfo).forEach(serviceId => {
-    iccId.push(iccInfo[serviceId].iccId);
-    mcc.push(iccInfo[serviceId].mcc);
-    mnc.push(iccInfo[serviceId].mnc);
-  });
-  document.getElementById('iccId').value = iccId.join(", ");
-  document.getElementById('mcc').value = mcc.join(", ");
-  document.getElementById('mnc').value = mnc.join(", ");
+  try {
+    var iccInfo = mozPaymentProvider.iccInfo;
+    if (!iccInfo) {
+      warning.innerHTML = 'ICC related functionality only works in a real device with a SIM';
+      warning.classList.remove('hide');
+      return;
+    }
+    var iccId = [];
+    var mcc = [];
+    var mnc = [];
+    Object.keys(iccInfo).forEach(serviceId => {
+      iccId.push(iccInfo[serviceId].iccId);
+      mcc.push(iccInfo[serviceId].mcc);
+      mnc.push(iccInfo[serviceId].mnc);
+    });
+    document.getElementById('iccId').value = iccId.join(", ");
+    document.getElementById('mcc').value = mcc.join(", ");
+    document.getElementById('mnc').value = mnc.join(", ");
+  } catch(e) {}
 });
